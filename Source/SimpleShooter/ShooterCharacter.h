@@ -40,4 +40,6 @@ private:
 
 	UPROPERTY()
 	AGun* Gun;
+
+	void Fire();
 };
