@@ -31,6 +31,8 @@ public:
 	UFUNCTION(BlueprintPure)
 	bool IsDead() const;
 
+	void Fire();
+
 private:
 	void MoveForward(float AxisValue);
 	void MoveRight(float AxisValue);
@@ -50,6 +52,4 @@ private:
 
 	UPROPERTY()
 	AGun* Gun;
-
-	void Fire();
 };
