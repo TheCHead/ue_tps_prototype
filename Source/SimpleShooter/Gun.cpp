@@ -43,7 +43,10 @@ void AGun::PullTrigger()
 	FVector traceEnd = viewpointLocation + viewpointRotation.Vector() * 1000.0;
 
 	FHitResult hit;
-	bool bHit = GetWorld()->LineTraceSingleByChannel(hit, viewpointLocation, traceEnd, ECollisionChannel::ECC_GameTraceChannel1);
+	FCollisionQueryParams Params;
+	Params.AddIgnoredActor(GetOwner());
+	Params.AddIgnoredActor(this);
+	bool bHit = GetWorld()->LineTraceSingleByChannel(hit, viewpointLocation, traceEnd, ECollisionChannel::ECC_GameTraceChannel1, Params);
 
 	//DrawDebugCamera(GetWorld(), viewpointLocation, viewpointRotation, 90, 2, FColor::Red, true);
 	if	(bHit)
