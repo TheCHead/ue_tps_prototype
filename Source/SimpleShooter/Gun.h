@@ -35,11 +35,17 @@ private:
 	UParticleSystem* MuzzleFlash;
 
 	UPROPERTY(EditAnywhere)
+	USoundBase* MuzzleSound;
+
+	UPROPERTY(EditAnywhere)
 	UParticleSystem* HitParticles;
+
+	UPROPERTY(EditAnywhere)
+	USoundBase* HitSound;
 
 	UPROPERTY(EditAnywhere)
 	float Damage = 10.f;
 
-	bool GunTrace(FHitResult& Hit, FVector& ShotDirection) const;
-	AController* GetOwnerController();
+	bool GunTrace(FHitResult& Hit, FVector& ShotDirection);
+	AController* GetOwnerController() const;
 };
