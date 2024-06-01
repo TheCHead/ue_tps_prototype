@@ -19,6 +19,7 @@ class SIMPLESHOOTER_API AShooterAIController : public AAIController
 	
 	public:
 		virtual void Tick(float DeltaTime) override;
+		bool IsDead() const;
 
 	private:
 		//UPROPERTY(EditAnywhere)
