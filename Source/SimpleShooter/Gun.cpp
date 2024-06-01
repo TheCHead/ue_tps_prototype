@@ -78,7 +78,7 @@ bool AGun::GunTrace(FHitResult &Hit, FVector &ShotDirection)
 
 	ShotDirection = -viewpointRotation.Vector();
 
-	FVector traceEnd = viewpointLocation + viewpointRotation.Vector() * 1000.0;
+	FVector traceEnd = viewpointLocation + viewpointRotation.Vector() * 5000.0;
 
 	FCollisionQueryParams Params;
 	Params.AddIgnoredActor(GetOwner());
